@@ -5,15 +5,14 @@
 package com.chuxiuhong.judge;
 
 
-
 class People {
     private int[] charList, stateList, timeList;//分别是字符数组(元素是整型的键盘码)，状态数组(元素是0或1，0按下1抬起)，时间数组(毫秒)
 
-    public People(int[] charList, int[] stateList, int[] timeList)throws IllegalArgumentException{
+    public People(int[] charList, int[] stateList, int[] timeList) throws IllegalArgumentException {
         this.charList = charList;
         this.stateList = stateList;
         this.timeList = timeList;
-        if(charList.length != stateList.length || stateList.length != timeList.length){
+        if (charList.length != stateList.length || stateList.length != timeList.length) {
             throw new IllegalArgumentException("The length of list must equal!");
         }
     }
@@ -51,11 +50,11 @@ class People {
         }
         sb.append("\nstateList: ");
         for (int i = 0; i < stateList.length; i++) {
-            sb.append(stateList[i]+" ");
+            sb.append(stateList[i] + " ");
         }
         sb.append("\ntimeList: ");
         for (int i = 0; i < timeList.length; i++) {
-            sb.append(timeList[i]+" ");
+            sb.append(timeList[i] + " ");
         }
         return sb.toString();
     }
@@ -70,7 +69,7 @@ class People {
             c[i] = i;
         }
 
-        People p = new People(a,b,c);
+        People p = new People(a, b, c);
         System.out.println(p.toString());
     }
 }
