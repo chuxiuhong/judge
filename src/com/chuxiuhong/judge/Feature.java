@@ -10,15 +10,19 @@ import java.util.Map;
 class Feature {
     private Map<Integer, Float> press;
     private Map<Integer[], Float> flight;
+    private Map<Integer, Integer> pressTimes;
+    private Map<Integer[], Integer> flightTimes;
 
     public Feature() {
         press = new HashMap<>();
         flight = new HashMap<>();
     }
 
-    public Feature(Map<Integer, Float> press, Map<Integer[], Float> flight) {
+    public Feature(Map<Integer, Float> press, Map<Integer[], Float> flight, Map<Integer, Integer> pressTimes, Map<Integer[], Integer> flightTimes) {
         this.press = press;
         this.flight = flight;
+        this.pressTimes = pressTimes;
+        this.flightTimes = flightTimes;
     }
 
     public Map<Integer, Float> getPress() {
@@ -51,6 +55,14 @@ class Feature {
             sb.append(i[0].toString() + "," + i[1].toString() + ":" + flight.get(i) + " ");
         }
         return sb.toString();
+    }
+
+    public Map<Integer, Integer> getPressTimes() {
+        return pressTimes;
+    }
+
+    public Map<Integer[], Integer> getFlightTimes() {
+        return flightTimes;
     }
 
     public static void main(String[] args) {

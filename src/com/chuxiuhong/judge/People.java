@@ -5,6 +5,8 @@
 package com.chuxiuhong.judge;
 
 
+import java.util.ArrayList;
+
 class People {
     private int[] charList, stateList, timeList;//分别是字符数组(元素是整型的键盘码)，状态数组(元素是0或1，0按下1抬起)，时间数组(毫秒)
 
@@ -15,6 +17,19 @@ class People {
         if (charList.length != stateList.length || stateList.length != timeList.length) {
             throw new IllegalArgumentException("The length of list must equal!");
         }
+    }
+    public People(ArrayList<Integer> charList, ArrayList<Integer> stateList , ArrayList<Integer> timeList){
+        int[] c = new int[charList.size()];
+        int[] s= new int[stateList.size()];
+        int[] t = new int[timeList.size()];
+        for (int i = 0; i < c.length; i++) {
+            c[i] = charList.get(i);
+            s[i] = stateList.get(i);
+            t[i] = timeList.get(i);
+        }
+        this.charList = c;
+        this.stateList = s;
+        this.timeList = t;
     }
 
     public int[] getCharList() {
