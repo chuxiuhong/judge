@@ -39,8 +39,8 @@ public class TextJudger {
      * @return The similarity between train data and test data. Value from 0 to 1
      */
     public float compare(PeopleText train, PeopleText test) {
-        Feature trainFeature = PeopleText.getFeature(train);
-        Feature testFeature = PeopleText.getFeature(test);
+        TextFeature trainTextFeature = PeopleText.getFeature(train);
+        TextFeature testTextFeature = PeopleText.getFeature(test);
         ArrayList<Float> trainPressVec = new ArrayList<>();
         ArrayList<Float> testPressVec = new ArrayList<>();
         ArrayList<Float> trainFlightVec = new ArrayList<>();
@@ -49,33 +49,33 @@ public class TextJudger {
         ArrayList<Integer> testPressTimesVec = new ArrayList<>();
         ArrayList<Integer> trainFlightTimesVec = new ArrayList<>();
         ArrayList<Integer> testFlightTimesVec = new ArrayList<>();
-        for (Integer i : trainFeature.getPress().keySet()
+        for (Integer i : trainTextFeature.getPress().keySet()
                 ) {
-            if (testFeature.getPress().keySet().contains(i)) {
-                if (trainFeature.getPress().get(i) <= pressTimeThreshold && testFeature.getPress().get(i) <= pressTimeThreshold
-                        && trainFeature.getPressTimes().get(i) >= pressTimesThreshold && testFeature.getPressTimes().get(i) >= pressTimesThreshold) {
-                    trainPressVec.add(trainFeature.getPress().get(i));
-                    testPressVec.add(testFeature.getPress().get(i));
-                    trainPressTimesVec.add(trainFeature.getPressTimes().get(i));
-                    testPressTimesVec.add(testFeature.getPressTimes().get(i));
+            if (testTextFeature.getPress().keySet().contains(i)) {
+                if (trainTextFeature.getPress().get(i) <= pressTimeThreshold && testTextFeature.getPress().get(i) <= pressTimeThreshold
+                        && trainTextFeature.getPressTimes().get(i) >= pressTimesThreshold && testTextFeature.getPressTimes().get(i) >= pressTimesThreshold) {
+                    trainPressVec.add(trainTextFeature.getPress().get(i));
+                    testPressVec.add(testTextFeature.getPress().get(i));
+                    trainPressTimesVec.add(trainTextFeature.getPressTimes().get(i));
+                    testPressTimesVec.add(testTextFeature.getPressTimes().get(i));
                 }
             }
         }
-        for (String i : trainFeature.getFlight().keySet()
+        for (String i : trainTextFeature.getFlight().keySet()
                 ) {
-            if (testFeature.getFlight().keySet().contains(i)) {
-                if (trainFeature.getFlight().get(i) <= flightTimeThreshold && testFeature.getFlight().get(i) <= flightTimeThreshold
-                        && trainFeature.getFlightTimes().get(i) >= flightTimesThreshold && testFeature.getFlightTimes().get(i) >= flightTimesThreshold) {
-                    trainFlightVec.add(trainFeature.getFlight().get(i));
-                    testFlightVec.add(testFeature.getFlight().get(i));
-                    trainFlightTimesVec.add(trainFeature.getFlightTimes().get(i));
-                    testFlightTimesVec.add(testFeature.getFlightTimes().get(i));
+            if (testTextFeature.getFlight().keySet().contains(i)) {
+                if (trainTextFeature.getFlight().get(i) <= flightTimeThreshold && testTextFeature.getFlight().get(i) <= flightTimeThreshold
+                        && trainTextFeature.getFlightTimes().get(i) >= flightTimesThreshold && testTextFeature.getFlightTimes().get(i) >= flightTimesThreshold) {
+                    trainFlightVec.add(trainTextFeature.getFlight().get(i));
+                    testFlightVec.add(testTextFeature.getFlight().get(i));
+                    trainFlightTimesVec.add(trainTextFeature.getFlightTimes().get(i));
+                    testFlightTimesVec.add(testTextFeature.getFlightTimes().get(i));
                 }
             }
         }
-        //System.out.println(trainFeature.getPress());
-//        System.out.println(trainFeature.getFlight());
-//        System.out.println(testFeature.getFlight());
+        //System.out.println(trainTextFeature.getPress());
+//        System.out.println(trainTextFeature.getFlight());
+//        System.out.println(testTextFeature.getFlight());
 //        System.out.println(trainPressVec);
 //        System.out.println(testPressVec);
 //        System.out.println(trainFlightVec);
@@ -108,8 +108,8 @@ public class TextJudger {
      * @return The similarity between train data List and test data. Value from 0 to 1
      */
     public float compare(PeopleText[] trainList,PeopleText test){
-        Feature trainFeature = PeopleText.getFeature(trainList);
-        Feature testFeature = PeopleText.getFeature(test);
+        TextFeature trainTextFeature = PeopleText.getFeature(trainList);
+        TextFeature testTextFeature = PeopleText.getFeature(test);
         ArrayList<Float> trainPressVec = new ArrayList<>();
         ArrayList<Float> testPressVec = new ArrayList<>();
         ArrayList<Float> trainFlightVec = new ArrayList<>();
@@ -118,27 +118,27 @@ public class TextJudger {
         ArrayList<Integer> testPressTimesVec = new ArrayList<>();
         ArrayList<Integer> trainFlightTimesVec = new ArrayList<>();
         ArrayList<Integer> testFlightTimesVec = new ArrayList<>();
-        for (Integer i : trainFeature.getPress().keySet()
+        for (Integer i : trainTextFeature.getPress().keySet()
                 ) {
-            if (testFeature.getPress().keySet().contains(i)) {
-                if (trainFeature.getPress().get(i) <= pressTimeThreshold && testFeature.getPress().get(i) <= pressTimeThreshold
-                        && trainFeature.getPressTimes().get(i) >= pressTimesThreshold && testFeature.getPressTimes().get(i) >= pressTimesThreshold) {
-                    trainPressVec.add(trainFeature.getPress().get(i));
-                    testPressVec.add(testFeature.getPress().get(i));
-                    trainPressTimesVec.add(trainFeature.getPressTimes().get(i));
-                    testPressTimesVec.add(testFeature.getPressTimes().get(i));
+            if (testTextFeature.getPress().keySet().contains(i)) {
+                if (trainTextFeature.getPress().get(i) <= pressTimeThreshold && testTextFeature.getPress().get(i) <= pressTimeThreshold
+                        && trainTextFeature.getPressTimes().get(i) >= pressTimesThreshold && testTextFeature.getPressTimes().get(i) >= pressTimesThreshold) {
+                    trainPressVec.add(trainTextFeature.getPress().get(i));
+                    testPressVec.add(testTextFeature.getPress().get(i));
+                    trainPressTimesVec.add(trainTextFeature.getPressTimes().get(i));
+                    testPressTimesVec.add(testTextFeature.getPressTimes().get(i));
                 }
             }
         }
-        for (String i : trainFeature.getFlight().keySet()
+        for (String i : trainTextFeature.getFlight().keySet()
                 ) {
-            if (testFeature.getFlight().keySet().contains(i)) {
-                if (trainFeature.getFlight().get(i) <= flightTimeThreshold && testFeature.getFlight().get(i) <= flightTimeThreshold
-                        && trainFeature.getFlightTimes().get(i) >= flightTimesThreshold && testFeature.getFlightTimes().get(i) >= flightTimesThreshold) {
-                    trainFlightVec.add(trainFeature.getFlight().get(i));
-                    testFlightVec.add(testFeature.getFlight().get(i));
-                    trainFlightTimesVec.add(trainFeature.getFlightTimes().get(i));
-                    testFlightTimesVec.add(testFeature.getFlightTimes().get(i));
+            if (testTextFeature.getFlight().keySet().contains(i)) {
+                if (trainTextFeature.getFlight().get(i) <= flightTimeThreshold && testTextFeature.getFlight().get(i) <= flightTimeThreshold
+                        && trainTextFeature.getFlightTimes().get(i) >= flightTimesThreshold && testTextFeature.getFlightTimes().get(i) >= flightTimesThreshold) {
+                    trainFlightVec.add(trainTextFeature.getFlight().get(i));
+                    testFlightVec.add(testTextFeature.getFlight().get(i));
+                    trainFlightTimesVec.add(trainTextFeature.getFlightTimes().get(i));
+                    testFlightTimesVec.add(testTextFeature.getFlightTimes().get(i));
                 }
             }
         }

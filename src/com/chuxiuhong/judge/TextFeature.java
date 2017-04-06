@@ -7,18 +7,18 @@ package com.chuxiuhong.judge;
 import java.util.HashMap;
 import java.util.Map;
 
-class Feature {
+class TextFeature {
     private Map<Integer, Float> press;
     private Map<String, Float> flight;
     private Map<Integer, Integer> pressTimes;
     private Map<String, Integer> flightTimes;
 
-    public Feature() {
+    public TextFeature() {
         press = new HashMap<>();
         flight = new HashMap<>();
     }
 
-    public Feature(Map<Integer, Float> press, Map<String, Float> flight, Map<Integer, Integer> pressTimes, Map<String, Integer> flightTimes) {
+    public TextFeature(Map<Integer, Float> press, Map<String, Float> flight, Map<Integer, Integer> pressTimes, Map<String, Integer> flightTimes) {
         this.press = press;
         this.flight = flight;
         this.pressTimes = pressTimes;
@@ -74,7 +74,7 @@ class Feature {
     }
 
     public static void main(String[] args) {
-        Feature test = new Feature();
+        TextFeature test = new TextFeature();
         Map<Integer, Float> p = new HashMap<>();
         Map<String, Float> f = new HashMap<>();
         String k = "";
@@ -87,6 +87,5 @@ class Feature {
         test.setFlight(f);
         test.setPress(p);
         System.out.println(test.toString());
-
     }
 }

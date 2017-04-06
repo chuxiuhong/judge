@@ -15,7 +15,7 @@ public class PeopleText extends People {
     public PeopleText(ArrayList<Integer> charList,ArrayList<Integer> stateList , ArrayList<Integer> timeList){
         super(charList,stateList,timeList);
     }
-    public static Feature getFeature(PeopleText peopleText) {
+    public static TextFeature getFeature(PeopleText peopleText) {
         Map<Integer, Float> press = new HashMap<>();
         Map<String, Float> flight = new HashMap<>();
         Map<Integer, Integer> pressTimes = new HashMap<>();
@@ -61,10 +61,10 @@ public class PeopleText extends People {
                 lastPress[1] = timeList[i];
             }
         }
-        return new Feature(press, flight, pressTimes, flightTimes);
+        return new TextFeature(press, flight, pressTimes, flightTimes);
     }
 
-    public static Feature getFeature(PeopleText[] peopleTexts) {
+    public static TextFeature getFeature(PeopleText[] peopleTexts) {
         Map<Integer, Float> press = new HashMap<>();
         Map<String, Float> flight = new HashMap<>();
         Map<Integer, Integer> pressTimes = new HashMap<>();
@@ -117,7 +117,7 @@ public class PeopleText extends People {
                 }
             }
         }
-        return new Feature(press, flight, pressTimes, flightTimes);
+        return new TextFeature(press, flight, pressTimes, flightTimes);
     }
 
     public static void main(String[] args) {
