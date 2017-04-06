@@ -17,11 +17,11 @@ public class PeopleText extends People {
     }
     public static Feature getFeature(PeopleText peopleText) {
         Map<Integer, Float> press = new HashMap<>();
-        Map<Integer[], Float> flight = new HashMap<>();
+        Map<String, Float> flight = new HashMap<>();
         Map<Integer, Integer> pressTimes = new HashMap<>();
-        Map<Integer[], Integer> flightTimes = new HashMap<>();
+        Map<String, Integer> flightTimes = new HashMap<>();
         Map<Integer, Integer> pressStack = new HashMap<>();
-        Integer[] flightList = new Integer[2];
+        String flightList = "";
         int[] lastPress = {0, 0};
         int[] charList = peopleText.getCharList();
         int[] stateList = peopleText.getStateList();
@@ -31,17 +31,16 @@ public class PeopleText extends People {
         for (int i = 0; i < peopleText.getCharList().length; i++) {
             if (stateList[i] == 0) {
                 if (lastPress[0] != 0) {
-                    flightList[0] = lastPress[0];
-                    flightList[1] = charList[i];
+                    flightList = String.valueOf(charList[i])+"-"+String.valueOf(lastPress[0]);
                     thisTime = timeList[i] - lastPress[1];
                     if (!flight.containsKey(flightList)) {
-                        flight.put(flightList.clone(), (float) thisTime);
-                        flightTimes.put(flightList.clone(), 1);
+                        flight.put(flightList, (float) thisTime);
+                        flightTimes.put(flightList, 1);
                     } else {
                         times = (float) (flightTimes.get(flightList) + 1);
-                        flight.put(flightList.clone(), flight.get(flightList) * flightTimes.get(flightList) / times +
+                        flight.put(flightList, flight.get(flightList) * flightTimes.get(flightList) / times +
                                 thisTime / times);
-                        flightTimes.put(flightList.clone(), (int) times);
+                        flightTimes.put(flightList, (int) times);
                     }
                     pressStack.put(charList[i], timeList[i]);
                 }
@@ -67,11 +66,11 @@ public class PeopleText extends People {
 
     public static Feature getFeature(PeopleText[] peopleTexts) {
         Map<Integer, Float> press = new HashMap<>();
-        Map<Integer[], Float> flight = new HashMap<>();
+        Map<String, Float> flight = new HashMap<>();
         Map<Integer, Integer> pressTimes = new HashMap<>();
-        Map<Integer[], Integer> flightTimes = new HashMap<>();
+        Map<String, Integer> flightTimes = new HashMap<>();
         Map<Integer, Integer> pressStack = new HashMap<>();
-        Integer[] flightList = new Integer[2];
+        String flightList = "";
         float times;
         int thisTime;
         for (PeopleText peopleText : peopleTexts
@@ -87,17 +86,16 @@ public class PeopleText extends People {
 
                 if (stateList[i] == 0) {
                     if (lastPress[0] != 0) {
-                        flightList[0] = lastPress[0];
-                        flightList[1] = charList[i];
+                        flightList = String.valueOf(charList[i])+"-"+String.valueOf(lastPress[0]);
                         thisTime = timeList[i] - lastPress[1];
                         if (!flight.containsKey(flightList)) {
-                            flight.put(flightList.clone(), (float) thisTime);
-                            flightTimes.put(flightList.clone(), 1);
+                            flight.put(flightList, (float) thisTime);
+                            flightTimes.put(flightList, 1);
                         } else {
                             times = (float) (flightTimes.get(flightList) + 1);
-                            flight.put(flightList.clone(), flight.get(flightList) * flightTimes.get(flightList) / times +
+                            flight.put(flightList, flight.get(flightList) * flightTimes.get(flightList) / times +
                                     thisTime / times);
-                            flightTimes.put(flightList.clone(), (int) times);
+                            flightTimes.put(flightList, (int) times);
                         }
                         pressStack.put(charList[i], timeList[i]);
                     }

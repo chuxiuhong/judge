@@ -61,7 +61,7 @@ public class TextJudger {
                 }
             }
         }
-        for (Integer[] i : trainFeature.getFlight().keySet()
+        for (String i : trainFeature.getFlight().keySet()
                 ) {
             if (testFeature.getFlight().keySet().contains(i)) {
                 if (trainFeature.getFlight().get(i) <= flightTimeThreshold && testFeature.getFlight().get(i) <= flightTimeThreshold
@@ -74,19 +74,19 @@ public class TextJudger {
             }
         }
         //System.out.println(trainFeature.getPress());
-        System.out.println(trainFeature.getFlight());
-        System.out.println(testFeature.getFlight());
-        System.out.println(trainPressVec);
-        System.out.println(testPressVec);
-        System.out.println(trainFlightVec);
-        System.out.println(testFlightVec);
+//        System.out.println(trainFeature.getFlight());
+//        System.out.println(testFeature.getFlight());
+//        System.out.println(trainPressVec);
+//        System.out.println(testPressVec);
+//        System.out.println(trainFlightVec);
+//        System.out.println(testFlightVec);
         float pressSimilar = TextJudger.cosSimilar(trainPressVec,testPressVec);
         float flightSimilar = TextJudger.cosSimilar(trainFlightVec,testFlightVec);
         //        float pressSimilar = TextJudger.weightCosSimilar(trainPressVec,trainPressTimesVec,testFlightVec,testFlightTimesVec);
 //        float flightSimilar = TextJudger.weightCosSimilar(trainFlightVec,trainFlightTimesVec,testFlightVec,testFlightTimesVec);
         float similar = 0;
         if (trainPressVec.size() > 1 && trainFlightVec.size() > 1){
-            similar = pressWeight * pressSimilar + (1-pressSimilar) * flightSimilar;
+            similar = pressWeight * pressSimilar + (1-pressWeight) * flightSimilar;
         }
         else if (trainPressTimesVec.size() > 1 && trainFlightVec.size() <= 1){
             similar = pressSimilar;
@@ -94,7 +94,8 @@ public class TextJudger {
         else if (trainFlightVec.size()>1){
             similar = flightSimilar;
         }
-
+//        System.out.println("pressSimilar" + pressSimilar);
+//        System.out.println("flightSimilar" + flightSimilar);
 
         return similar;
 
@@ -129,7 +130,7 @@ public class TextJudger {
                 }
             }
         }
-        for (Integer[] i : trainFeature.getFlight().keySet()
+        for (String i : trainFeature.getFlight().keySet()
                 ) {
             if (testFeature.getFlight().keySet().contains(i)) {
                 if (trainFeature.getFlight().get(i) <= flightTimeThreshold && testFeature.getFlight().get(i) <= flightTimeThreshold
@@ -147,7 +148,7 @@ public class TextJudger {
 //        float flightSimilar = TextJudger.weightCosSimilar(trainFlightVec,trainFlightTimesVec,testFlightVec,testFlightTimesVec);
         float similar = 0;
         if (trainPressVec.size() > 1 && trainFlightVec.size() > 1){
-            similar = pressWeight * pressSimilar + (1-pressSimilar) * flightSimilar;
+            similar = pressWeight * pressSimilar + (1-pressWeight) * flightSimilar;
         }
         else if (trainPressTimesVec.size() > 1 && trainFlightVec.size() <= 1){
             similar = pressSimilar;
