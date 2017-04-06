@@ -73,15 +73,30 @@ public class TextJudger {
                 }
             }
         }
+        //System.out.println(trainFeature.getPress());
+        System.out.println(trainFeature.getFlight());
+        System.out.println(testFeature.getFlight());
         System.out.println(trainPressVec);
         System.out.println(testPressVec);
         System.out.println(trainFlightVec);
         System.out.println(testFlightVec);
         float pressSimilar = TextJudger.cosSimilar(trainPressVec,testPressVec);
         float flightSimilar = TextJudger.cosSimilar(trainFlightVec,testFlightVec);
-//        float pressSimilar = TextJudger.weightCosSimilar(trainPressVec,trainPressTimesVec,testFlightVec,testFlightTimesVec);
+        //        float pressSimilar = TextJudger.weightCosSimilar(trainPressVec,trainPressTimesVec,testFlightVec,testFlightTimesVec);
 //        float flightSimilar = TextJudger.weightCosSimilar(trainFlightVec,trainFlightTimesVec,testFlightVec,testFlightTimesVec);
-        return pressWeight * pressSimilar + (1-pressSimilar) * flightSimilar;
+        float similar = 0;
+        if (trainPressVec.size() > 1 && trainFlightVec.size() > 1){
+            similar = pressWeight * pressSimilar + (1-pressSimilar) * flightSimilar;
+        }
+        else if (trainPressTimesVec.size() > 1 && trainFlightVec.size() <= 1){
+            similar = pressSimilar;
+        }
+        else if (trainFlightVec.size()>1){
+            similar = flightSimilar;
+        }
+
+
+        return similar;
 
     }
 
@@ -130,7 +145,17 @@ public class TextJudger {
         float flightSimilar = TextJudger.cosSimilar(trainFlightVec,testFlightVec);
 //        float pressSimilar = TextJudger.weightCosSimilar(trainPressVec,trainPressTimesVec,testFlightVec,testFlightTimesVec);
 //        float flightSimilar = TextJudger.weightCosSimilar(trainFlightVec,trainFlightTimesVec,testFlightVec,testFlightTimesVec);
-        return pressWeight * pressSimilar + (1-pressSimilar) * flightSimilar;
+        float similar = 0;
+        if (trainPressVec.size() > 1 && trainFlightVec.size() > 1){
+            similar = pressWeight * pressSimilar + (1-pressSimilar) * flightSimilar;
+        }
+        else if (trainPressTimesVec.size() > 1 && trainFlightVec.size() <= 1){
+            similar = pressSimilar;
+        }
+        else if (trainFlightVec.size()>1){
+            similar = flightSimilar;
+        }
+        return similar;
     }
     /**
      *
