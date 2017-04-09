@@ -29,7 +29,7 @@ public class TextJudger {
         this.flightTimeThreshold = 2000;
         this.pressTimeThreshold = 500;
         this.pressTimesThreshold = 3;
-        this.pressWeight = 0.5f;
+        this.pressWeight = 0.3f;
     }
 
     /**
@@ -82,7 +82,7 @@ public class TextJudger {
 //        System.out.println(testFlightVec);
         float pressSimilar = TextJudger.cosSimilar(trainPressVec,testPressVec);
         float flightSimilar = TextJudger.cosSimilar(trainFlightVec,testFlightVec);
-        //        float pressSimilar = TextJudger.weightCosSimilar(trainPressVec,trainPressTimesVec,testFlightVec,testFlightTimesVec);
+//        float pressSimilar = TextJudger.weightCosSimilar(trainPressVec,trainPressTimesVec,testPressVec,testPressTimesVec);
 //        float flightSimilar = TextJudger.weightCosSimilar(trainFlightVec,trainFlightTimesVec,testFlightVec,testFlightTimesVec);
         float similar = 0;
         if (trainPressVec.size() > 1 && trainFlightVec.size() > 1){
@@ -142,10 +142,10 @@ public class TextJudger {
                 }
             }
         }
-        float pressSimilar = TextJudger.cosSimilar(trainPressVec,testPressVec);
-        float flightSimilar = TextJudger.cosSimilar(trainFlightVec,testFlightVec);
-//        float pressSimilar = TextJudger.weightCosSimilar(trainPressVec,trainPressTimesVec,testFlightVec,testFlightTimesVec);
-//        float flightSimilar = TextJudger.weightCosSimilar(trainFlightVec,trainFlightTimesVec,testFlightVec,testFlightTimesVec);
+//        float pressSimilar = TextJudger.cosSimilar(trainPressVec,testPressVec);
+//        float flightSimilar = TextJudger.cosSimilar(trainFlightVec,testFlightVec);
+        float pressSimilar = TextJudger.weightCosSimilar(trainPressVec,trainPressTimesVec,testPressVec,testPressTimesVec);
+        float flightSimilar = TextJudger.weightCosSimilar(trainFlightVec,trainFlightTimesVec,testFlightVec,testFlightTimesVec);
         float similar = 0;
         if (trainPressVec.size() > 1 && trainFlightVec.size() > 1){
             similar = pressWeight * pressSimilar + (1-pressWeight) * flightSimilar;
@@ -213,10 +213,11 @@ public class TextJudger {
             sumOfBweight += bWeight.get(i);
         }
         lenA = Math.sqrt(tmp);
-        lenB = Math.sqrt(tmp);
+        lenB = Math.sqrt(tmp2);
         tmp = 0;
         for (int i = 0; i < a.size(); i++) {
-            tmp += a.get(i) * b.get(i) * (aWeight.get(i) + bWeight.get(i))/ ((lenA * lenB) * (sumOfAweight+sumOfBweight));
+
+            tmp += a.get(i) * b.get(i) * (aWeight.get(i) + bWeight.get(i)) / (lenA * lenB) / (sumOfAweight+sumOfBweight);
         }
         if (tmp <0){
             tmp = 0;

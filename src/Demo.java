@@ -39,7 +39,10 @@ public class Demo {
                 }
                 peopleTexts.add(new PeopleText(charList,stateList,timeList));
                 TextJudger tj = new TextJudger();
-                System.out.println(tj.compare(peopleTexts.get(0),peopleTexts.get(2)));
+                PeopleText[] a = new PeopleText[2];
+                a[0] = peopleTexts.get(1);
+                a[1] = peopleTexts.get(2);
+                System.out.println(tj.compare(a,peopleTexts.get(0)));
                 r.close();
 
             }
