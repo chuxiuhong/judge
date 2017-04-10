@@ -15,7 +15,13 @@ public class TextJudger {
     private final int pressTimesThreshold;
     private final float pressWeight;
 
-
+    /**
+     * @param flightTimesThreshold
+     * @param flightTimeThreshold
+     * @param pressTimeThreshold
+     * @param pressTimesThreshold
+     * @param pressWeight
+     */
     public TextJudger(int flightTimesThreshold, int flightTimeThreshold, int pressTimeThreshold, int pressTimesThreshold, float pressWeight) {
         this.flightTimesThreshold = flightTimesThreshold;
         this.flightTimeThreshold = flightTimeThreshold;
@@ -33,9 +39,8 @@ public class TextJudger {
     }
 
     /**
-     *
      * @param train train data
-     * @param test test data
+     * @param test  test data
      * @return The similarity between train data and test data. Value from 0 to 1
      */
     public float compare(PeopleText train, PeopleText test) {
@@ -80,18 +85,16 @@ public class TextJudger {
 //        System.out.println(testPressVec);
 //        System.out.println(trainFlightVec);
 //        System.out.println(testFlightVec);
-        float pressSimilar = TextJudger.cosSimilar(trainPressVec,testPressVec);
-        float flightSimilar = TextJudger.cosSimilar(trainFlightVec,testFlightVec);
+        float pressSimilar = TextJudger.cosSimilar(trainPressVec, testPressVec);
+        float flightSimilar = TextJudger.cosSimilar(trainFlightVec, testFlightVec);
 //        float pressSimilar = TextJudger.weightCosSimilar(trainPressVec,trainPressTimesVec,testPressVec,testPressTimesVec);
 //        float flightSimilar = TextJudger.weightCosSimilar(trainFlightVec,trainFlightTimesVec,testFlightVec,testFlightTimesVec);
         float similar = 0;
-        if (trainPressVec.size() > 1 && trainFlightVec.size() > 1){
-            similar = pressWeight * pressSimilar + (1-pressWeight) * flightSimilar;
-        }
-        else if (trainPressTimesVec.size() > 1 && trainFlightVec.size() <= 1){
+        if (trainPressVec.size() > 1 && trainFlightVec.size() > 1) {
+            similar = pressWeight * pressSimilar + (1 - pressWeight) * flightSimilar;
+        } else if (trainPressTimesVec.size() > 1 && trainFlightVec.size() <= 1) {
             similar = pressSimilar;
-        }
-        else if (trainFlightVec.size()>1){
+        } else if (trainFlightVec.size() > 1) {
             similar = flightSimilar;
         }
 //        System.out.println("pressSimilar" + pressSimilar);
@@ -102,12 +105,11 @@ public class TextJudger {
     }
 
     /**
-     *
      * @param trainList train data List
-     * @param test test data
+     * @param test      test data
      * @return The similarity between train data List and test data. Value from 0 to 1
      */
-    public float compare(PeopleText[] trainList,PeopleText test){
+    public float compare(PeopleText[] trainList, PeopleText test) {
         TextFeature trainTextFeature = PeopleText.getFeature(trainList);
         TextFeature testTextFeature = PeopleText.getFeature(test);
         ArrayList<Float> trainPressVec = new ArrayList<>();
@@ -142,24 +144,22 @@ public class TextJudger {
                 }
             }
         }
-//        float pressSimilar = TextJudger.cosSimilar(trainPressVec,testPressVec);
-//        float flightSimilar = TextJudger.cosSimilar(trainFlightVec,testFlightVec);
-        float pressSimilar = TextJudger.weightCosSimilar(trainPressVec,trainPressTimesVec,testPressVec,testPressTimesVec);
-        float flightSimilar = TextJudger.weightCosSimilar(trainFlightVec,trainFlightTimesVec,testFlightVec,testFlightTimesVec);
+        float pressSimilar = TextJudger.cosSimilar(trainPressVec, testPressVec);
+        float flightSimilar = TextJudger.cosSimilar(trainFlightVec, testFlightVec);
+//        float pressSimilar = TextJudger.weightCosSimilar(trainPressVec,trainPressTimesVec,testPressVec,testPressTimesVec);
+//        float flightSimilar = TextJudger.weightCosSimilar(trainFlightVec,trainFlightTimesVec,testFlightVec,testFlightTimesVec);
         float similar = 0;
-        if (trainPressVec.size() > 1 && trainFlightVec.size() > 1){
-            similar = pressWeight * pressSimilar + (1-pressWeight) * flightSimilar;
-        }
-        else if (trainPressTimesVec.size() > 1 && trainFlightVec.size() <= 1){
+        if (trainPressVec.size() > 1 && trainFlightVec.size() > 1) {
+            similar = pressWeight * pressSimilar + (1 - pressWeight) * flightSimilar;
+        } else if (trainPressTimesVec.size() > 1 && trainFlightVec.size() <= 1) {
             similar = pressSimilar;
-        }
-        else if (trainFlightVec.size()>1){
+        } else if (trainFlightVec.size() > 1) {
             similar = flightSimilar;
         }
         return similar;
     }
+
     /**
-     *
      * @param a input vector a
      * @param b input vector b
      * @return normalized Cos Similar ,Value from 0 to 1
@@ -182,17 +182,16 @@ public class TextJudger {
         for (int i = 0; i < a.size(); i++) {
             tmp += a.get(i) * b.get(i) / (lenA * lenB);
         }
-        if (tmp<0){
+        if (tmp < 0) {
             tmp = 0;
         }
         return (float) tmp;
     }
 
     /**
-     *
-     * @param a input vector a
+     * @param a       input vector a
      * @param aWeight the weight of a
-     * @param b input vector b
+     * @param b       input vector b
      * @param bWeight the weight of b
      * @return normalized Weighted Cos Similar ,Value from 0 to 1
      * @throws IllegalArgumentException
@@ -216,13 +215,18 @@ public class TextJudger {
         lenB = Math.sqrt(tmp2);
         tmp = 0;
         for (int i = 0; i < a.size(); i++) {
-
-            tmp += a.get(i) * b.get(i) * (aWeight.get(i) + bWeight.get(i)) / (lenA * lenB) / (sumOfAweight+sumOfBweight);
+//            System.out.println("#######################");
+//            System.out.println(a.get(i));
+//            System.out.println(b.get(i));
+//            System.out.println(aWeight.get(i));
+//            System.out.println(bWeight.get(i));
+            tmp += a.get(i) * b.get(i) * (aWeight.get(i) + bWeight.get(i));
         }
-        if (tmp <0){
+        if (tmp < 0) {
             tmp = 0;
         }
-        return (float) tmp;
+        System.out.println(sumOfAweight + sumOfBweight);
+        return (float) (tmp / (lenA * lenB) / (sumOfAweight + sumOfBweight));
     }
 
     public static void main(String[] args) {
@@ -230,9 +234,9 @@ public class TextJudger {
         ArrayList<Float> b = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
             a.add((float) i);
-            b.add((float) i* -1);
+            b.add((float) i * -1);
         }
-        System.out.println(TextJudger.cosSimilar(a,b));
+        System.out.println(TextJudger.cosSimilar(a, b));
     }
 
     public float getFlightTimesThreshold() {

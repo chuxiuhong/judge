@@ -2,9 +2,6 @@
  * Copyright (c) 2017 Ziqi Yuan All rights reserved
  */
 
-/**
- * Created by 56363 on 2017/4/5.
- */
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.charset.Charset;
