@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="130ee26a-2e9c-4ea7-b403-36085c629a32" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/chuxiuhong/judge/PeoplePassword.java" afterPath="$PROJECT_DIR$/src/com/chuxiuhong/judge/PeoplePassword.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/chuxiuhong/judge/PwdFeature.java" afterPath="$PROJECT_DIR$/src/com/chuxiuhong/judge/PwdFeature.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/chuxiuhong/judge/PwdJudger.java" afterPath="$PROJECT_DIR$/src/com/chuxiuhong/judge/PwdJudger.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/chuxiuhong/judge/TextJudger.java" afterPath="$PROJECT_DIR$/src/com/chuxiuhong/judge/TextJudger.java" />
     </list>
     <ignored path="judge.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,7 +29,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/chuxiuhong/judge/TextFeature.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1440">
-              <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+              <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding>
                 <element signature="e#0#2354#0" expanded="true" />
                 <element signature="imports" expanded="true" />
@@ -43,26 +40,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PeopleText.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/chuxiuhong/judge/PeopleText.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4704">
-              <caret line="118" column="0" lean-forward="true" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#5639#0" expanded="true" />
-                <element signature="imports" expanded="true" />
-                <element signature="e#5594#5595#0" expanded="true" />
-                <element signature="e#5635#5636#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="PwdFeature.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/chuxiuhong/judge/PwdFeature.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4368">
-              <caret line="93" column="18" lean-forward="false" selection-start-line="93" selection-start-column="18" selection-end-line="93" selection-end-column="18" />
+            <state relative-caret-position="-293">
+              <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
               <folding>
                 <element signature="e#1065#1066#0" expanded="true" />
                 <element signature="e#1098#1099#0" expanded="true" />
@@ -88,8 +70,8 @@
       <file leaf-file-name="PeoplePassword.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/chuxiuhong/judge/PeoplePassword.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5">
-              <caret line="112" column="9" lean-forward="true" selection-start-line="112" selection-start-column="9" selection-end-line="112" selection-end-column="9" />
+            <state relative-caret-position="1028">
+              <caret line="127" column="14" lean-forward="false" selection-start-line="127" selection-start-column="14" selection-end-line="127" selection-end-column="14" />
               <folding>
                 <element signature="e#241#242#0" expanded="true" />
                 <element signature="e#293#294#0" expanded="true" />
@@ -98,52 +80,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TextJudger.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/chuxiuhong/judge/TextJudger.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="244" column="0" lean-forward="true" selection-start-line="244" selection-start-column="0" selection-end-line="244" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#11658#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="PwdJudger.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/chuxiuhong/judge/PwdJudger.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="604">
-              <caret line="61" column="8" lean-forward="false" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="8" />
+            <state relative-caret-position="644">
+              <caret line="172" column="69" lean-forward="false" selection-start-line="172" selection-start-column="69" selection-end-line="172" selection-end-column="69" />
               <folding>
-                <element signature="e#0#2835#0" expanded="true" />
-                <element signature="e#188#189#0" expanded="true" />
-                <element signature="e#234#235#0" expanded="true" />
+                <element signature="e#0#9331#0" expanded="true" />
+                <element signature="e#217#218#0" expanded="true" />
+                <element signature="e#263#264#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Demo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Demo.java">
+      <file leaf-file-name="TextJudger.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/chuxiuhong/judge/TextJudger.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1771">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="576">
+              <caret line="172" column="23" lean-forward="true" selection-start-line="172" selection-start-column="23" selection-end-line="172" selection-end-column="23" />
               <folding>
-                <element signature="e#0#2010#0" expanded="true" />
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1104">
-              <caret line="25" column="17" lean-forward="false" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#0#11658#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -183,8 +140,8 @@
         <option value="$PROJECT_DIR$/src/com/chuxiuhong/judge/PeopleText.java" />
         <option value="$PROJECT_DIR$/src/Demo.java" />
         <option value="$PROJECT_DIR$/src/com/chuxiuhong/judge/TextJudger.java" />
-        <option value="$PROJECT_DIR$/src/com/chuxiuhong/judge/PeoplePassword.java" />
         <option value="$PROJECT_DIR$/src/com/chuxiuhong/judge/PwdFeature.java" />
+        <option value="$PROJECT_DIR$/src/com/chuxiuhong/judge/PeoplePassword.java" />
         <option value="$PROJECT_DIR$/src/com/chuxiuhong/judge/PwdJudger.java" />
       </list>
     </option>
@@ -293,7 +250,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../keystroke-dynamics-biometric" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Console Font" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -310,7 +267,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.PeoplePassword">
+  <component name="RunManager" selected="Application.PwdJudger">
     <configuration default="false" name="TextFeature" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -366,9 +323,14 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="test" />
+    <configuration default="false" name="PeoplePassword" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.chuxiuhong.judge.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.chuxiuhong.judge.PeoplePassword" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -381,14 +343,14 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="PeoplePassword" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="PwdJudger" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.chuxiuhong.judge.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="com.chuxiuhong.judge.PeoplePassword" />
+      <option name="MAIN_CLASS_NAME" value="com.chuxiuhong.judge.PwdJudger" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -776,16 +738,16 @@
       <item index="0" class="java.lang.String" itemvalue="Application.TextFeature" />
       <item index="1" class="java.lang.String" itemvalue="Application.TextJudger" />
       <item index="2" class="java.lang.String" itemvalue="Application.Demo" />
-      <item index="3" class="java.lang.String" itemvalue="Application.test" />
-      <item index="4" class="java.lang.String" itemvalue="Application.PeoplePassword" />
+      <item index="3" class="java.lang.String" itemvalue="Application.PeoplePassword" />
+      <item index="4" class="java.lang.String" itemvalue="Application.PwdJudger" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.PeoplePassword" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Demo" />
-        <item index="2" class="java.lang.String" itemvalue="Application.TextJudger" />
-        <item index="3" class="java.lang.String" itemvalue="Application.TextFeature" />
-        <item index="4" class="java.lang.String" itemvalue="Application.test" />
+        <item index="0" class="java.lang.String" itemvalue="Application.PwdJudger" />
+        <item index="1" class="java.lang.String" itemvalue="Application.PeoplePassword" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Demo" />
+        <item index="3" class="java.lang.String" itemvalue="Application.TextJudger" />
+        <item index="4" class="java.lang.String" itemvalue="Application.TextFeature" />
       </list>
     </recent_temporary>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
@@ -829,12 +791,12 @@
       <workItem from="1491217183763" duration="8742000" />
       <workItem from="1491295781094" duration="1176000" />
       <workItem from="1491297361571" duration="7736000" />
-      <workItem from="1491350297629" duration="61134000" />
+      <workItem from="1491350297629" duration="73721000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78788000" />
+    <option name="totallyTimeSpent" value="91375000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-12" y="-12" width="3024" height="1954" extended-state="6" />
@@ -859,10 +821,10 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32965758" sideWeight="0.49794802" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32907718" sideWeight="0.498632" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32037145" sideWeight="0.498632" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3284968" sideWeight="0.497606" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2134063" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34541723" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33216375" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -909,6 +871,24 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
       <collection />
@@ -922,7 +902,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/chuxiuhong/judge/PwdJudger.java</url>
+          <line>197</line>
+          <properties />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="5" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -959,7 +947,7 @@
         <state relative-caret-position="288">
           <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
-            <element signature="e#0#5488#0" expanded="false" />
+            <element signature="e#0#6638#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1015,7 +1003,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#5488#0" expanded="false" />
+            <element signature="e#0#6638#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1061,7 +1049,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#5488#0" expanded="false" />
+            <element signature="e#0#6638#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1095,25 +1083,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test.java">
+    <entry file="file://$PROJECT_DIR$/src/Demo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1104">
-          <caret line="25" column="17" lean-forward="false" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+        <state relative-caret-position="-1771">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding>
+            <element signature="e#0#2010#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/chuxiuhong/judge/TextFeature.java">
+    <entry file="file://$PROJECT_DIR$/src/test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1440">
-          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+        <state relative-caret-position="960">
+          <caret line="25" column="17" lean-forward="false" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
           <folding>
-            <element signature="e#0#2354#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#1856#1857#0" expanded="true" />
-            <element signature="e#1890#1891#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1131,10 +1117,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/chuxiuhong/judge/TextFeature.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1440">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#2354#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1856#1857#0" expanded="true" />
+            <element signature="e#1890#1891#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/chuxiuhong/judge/PwdFeature.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4368">
-          <caret line="93" column="18" lean-forward="false" selection-start-line="93" selection-start-column="18" selection-end-line="93" selection-end-column="18" />
+        <state relative-caret-position="-293">
+          <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
           <folding>
             <element signature="e#1065#1066#0" expanded="true" />
             <element signature="e#1098#1099#0" expanded="true" />
@@ -1156,10 +1155,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/chuxiuhong/judge/TextJudger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="172" column="23" lean-forward="true" selection-start-line="172" selection-start-column="23" selection-end-line="172" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#11658#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/chuxiuhong/judge/PeoplePassword.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5">
-          <caret line="112" column="9" lean-forward="true" selection-start-line="112" selection-start-column="9" selection-end-line="112" selection-end-column="9" />
+        <state relative-caret-position="1028">
+          <caret line="127" column="14" lean-forward="false" selection-start-line="127" selection-start-column="14" selection-end-line="127" selection-end-column="14" />
           <folding>
             <element signature="e#241#242#0" expanded="true" />
             <element signature="e#293#294#0" expanded="true" />
@@ -1167,35 +1176,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/chuxiuhong/judge/TextJudger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="244" column="0" lean-forward="true" selection-start-line="244" selection-start-column="0" selection-end-line="244" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#11658#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Demo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1771">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#2010#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/chuxiuhong/judge/PwdJudger.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="604">
-          <caret line="61" column="8" lean-forward="false" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="8" />
+        <state relative-caret-position="644">
+          <caret line="172" column="69" lean-forward="false" selection-start-line="172" selection-start-column="69" selection-end-line="172" selection-end-column="69" />
           <folding>
-            <element signature="e#0#2835#0" expanded="true" />
-            <element signature="e#188#189#0" expanded="true" />
-            <element signature="e#234#235#0" expanded="true" />
+            <element signature="e#0#9331#0" expanded="true" />
+            <element signature="e#217#218#0" expanded="true" />
+            <element signature="e#263#264#0" expanded="true" />
           </folding>
         </state>
       </provider>
