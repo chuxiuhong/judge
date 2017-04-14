@@ -4,8 +4,6 @@
 
 package com.chuxiuhong.judge;
 
-import java.util.ArrayList;
-
 public class PwdJudger {
     private float pressWeight;
 
@@ -90,6 +88,14 @@ public class PwdJudger {
 //        }
 //        return pressSimilar * pressWeight + flightSimilar * (1 - pressWeight);
 //    }
+
+    /**
+     * 用以计算余弦相似度的静态方法，要求两个数组长度相等
+     * @param a 浮点数数组A
+     * @param b 浮点数数组B
+     * @return a，b两个数组的余弦相似度
+     * @throws IllegalArgumentException
+     */
     private static float cosSimilar(float[] a, float[] b) throws IllegalArgumentException {
         if (a.length != b.length) {
             throw new IllegalArgumentException("Length of vector must equal");
@@ -113,6 +119,14 @@ public class PwdJudger {
         return (float) tmp;
     }
 
+    /**
+     * 对多组训练数据和一组测试数据进行对比，从PeoplePassword提取特征传递过来，然后用余弦相似度的方法计算相似度
+     * @param trainList 训练样本的多组数据
+     * @param test 测试样本的数据
+     * @param password 对应的密码，用于提取特征正确提取出对应位置的特征
+     * @return 相似度，0-1之间，目前是不带权重的余弦相似度
+     * @throws IllegalArgumentException
+     */
     public float compare(PeoplePassword[] trainList, PeoplePassword test, String password) throws IllegalArgumentException {
         float pressSimilar = 0;
         float flightSimilar = 0;
@@ -169,8 +183,8 @@ public class PwdJudger {
         }
         //pressSimilar = pressSimilar / (pressTrainInner * pressTestInner);
         //flightSimilar = flightSimilar / (flightTrainInner * flightTestInner);
-        pressSimilar = PwdJudger.cosSimilar(trainPress,testPress);
-        flightSimilar = PwdJudger.cosSimilar(trainFlight,testFlight);
+        pressSimilar = PwdJudger.cosSimilar(trainPress, testPress);
+        flightSimilar = PwdJudger.cosSimilar(trainFlight, testFlight);
         return pressSimilar * pressWeight + (1 - pressWeight) * flightSimilar;
     }
 
@@ -198,5 +212,6 @@ public class PwdJudger {
         trainList[1] = p2;
         PwdJudger pj = new PwdJudger(0.5f);
         System.out.println(pj.compare(trainList, p3, "apsllkqw12"));
+
     }
 }

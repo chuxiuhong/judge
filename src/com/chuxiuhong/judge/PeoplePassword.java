@@ -6,7 +6,10 @@ package com.chuxiuhong.judge;
 
 import java.util.ArrayList;
 
-
+/**
+ * 作为围绕用户输入密码的类，继承自People类，成员变量同People类
+ * 目前有两个重载的getFeature类，一个是对一组数据提取特征，一个是对多组数据提取特征
+ */
 public class PeoplePassword extends People {
     public PeoplePassword(int[] charList, int[] stateList, int[] timeList) {
         super(charList, stateList, timeList);
@@ -16,6 +19,12 @@ public class PeoplePassword extends People {
         super(charList, stateList, timeList);
     }
 
+    /**
+     * 静态方法，用以对存储的密码敲击数据提取特征，是将密码中的每一个字符的按键时间和飞跃时间做记录，封装成PwdFeature
+     * @param pp 一组数据
+     * @param password 密码对应的原文，以便于从按键数据中提取有用的信息
+     * @return 这组特征对应的特征
+     */
     public static PwdFeature getFeature(PeoplePassword pp, String password) {
         password = password.toUpperCase();
         int len = password.length();
@@ -65,6 +74,12 @@ public class PeoplePassword extends People {
         return new PwdFeature(pressTime, flightTime);
     }
 
+    /**
+     * 其功能大致上与单组数据的getFeature类似，但通过多组数据可以额外提取出方差，最大，最小值等信息，一并封装进PwdFeature类中
+     * @param pp 多组数据的数组
+     * @param password 密码原文
+     * @return
+     */
     public static PwdFeature getFeature(PeoplePassword[] pp, String password) {
         int len = password.length();
         float[] pressTime = new float[len];
