@@ -11,14 +11,14 @@ import java.util.ArrayList;
  */
 public class postman {
     /**
-     * @param a    为前端发送数据
-     * @param b    数据库内数据
+     * @param test    为前端发送数据
+     * @param train    数据库内数据
      * @param pass 密码明文
      * @return 相似度，float型，取值[0,1]
      */
-    public static float comparePass(String a, String b, String pass) {
-        String[] aList = a.split("\n|,");
-        String[] bList = b.split("\n|,");
+    public static float comparePass(String test, String train, String pass) {
+        String[] aList = test.split("\n|,");
+        String[] bList = train.split("\n|,");
         int aLength = aList.length - 3;
         int bLength = bList.length - 6;
         ArrayList<Integer> aCharList = new ArrayList<>();
@@ -122,6 +122,67 @@ public class postman {
             e.printStackTrace();
             return 0.79f;
         }
+    }
 
+    public static float compareText(String test,String train) {
+        String[] aList = test.split("\n|,");
+        String[] bList = train.split("\n|,");
+        int aLength = aList.length - 3;
+        int bLength = bList.length - 6;
+        ArrayList<Integer> aCharList = new ArrayList<>();
+        ArrayList<Integer> aStateList = new ArrayList<>();
+        ArrayList<Integer> aTimeList = new ArrayList<>();
+        ArrayList<Integer> bCharList1 = new ArrayList<>();
+        ArrayList<Integer> bStateList1 = new ArrayList<>();
+        ArrayList<Integer> bTimeList1 = new ArrayList<>();
+        ArrayList<Integer> bCharList2 = new ArrayList<>();
+        ArrayList<Integer> bStateList2 = new ArrayList<>();
+        ArrayList<Integer> bTimeList2 = new ArrayList<>();
+        for (int i = 3; i < aLength; i++) {
+            if (i % 3 == 0) {
+                aCharList.add(Integer.parseInt(aList[i]));
+            } else if (i % 3 == 1) {
+                aTimeList.add(Integer.parseInt(aList[i]));
+            } else {
+                aStateList.add(Integer.parseInt(aList[i]));
+            }
+        }
+        int flag = 0;
+        for (int i = 3; i < bLength; i++) {
+            if (flag == 0) {
+                if (Character.isDigit(bList[i].charAt(0))) {
+                    if (i % 3 == 0) {
+                        bCharList1.add(Integer.parseInt(bList[i]));
+                    } else if (i % 3 == 1) {
+                        bTimeList1.add(Integer.parseInt(bList[i]));
+                    } else {
+                        bStateList1.add(Integer.parseInt(bList[i]));
+                    }
+                } else {
+                    flag = 1;
+                }
+            } else {
+                if (Character.isDigit(bList[i].charAt(0))) {
+                    if (i % 3 == 0) {
+                        bCharList2.add(Integer.parseInt(bList[i]));
+                    } else if (i % 3 == 1) {
+                        bTimeList2.add(Integer.parseInt(bList[i]));
+                    } else {
+                        bStateList2.add(Integer.parseInt(bList[i]));
+                    }
+                }
+            }
+        }
+        try {
+            PeopleText p1 = new PeopleText(aCharList,aStateList,aTimeList);
+            PeopleText p2 = new PeopleText(bCharList1,bStateList1,bTimeList1);
+            PeopleText p3 = new PeopleText(bCharList2,bStateList2,bTimeList2);
+            PeopleText[] list = {p2,p3};
+            TextJudger tj = new TextJudger();
+            return tj.compare(list,p1);
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+            return 0.79f;
+        }
     }
 }
