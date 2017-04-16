@@ -38,10 +38,8 @@ public class PeoplePassword extends People {
         float deltaTime = 0;
         int i = 0;
         while (i < charList.length && cur < len) {
-//            System.out.println("i: "+i);
-//            System.out.println("cur " +cur);
             if (password.charAt(cur) != '_') {
-                if (charList[i] == (int) password.charAt(cur) && stateList[i] == 0) {
+                if (PeoplePassword.isKeycode(password.charAt(cur),charList[i]) && stateList[i] == 0) {
                     startTime[cur] = timeList[i];
                     pressTime[cur] = timeList[i];
                     for (int j = i; j < charList.length; j++) {
@@ -145,6 +143,71 @@ public class PeoplePassword extends People {
         return new PwdFeature(pressTime, flightTime, maxPressTime, minPressTime, maxFlightTime, minFlightTime, varPress, varFlight);
     }
 
+    /**
+     * 判断字符与键盘码是否对应
+     * @param key 字符
+     * @param code 整型键盘码
+     * @return 如果是返回true，否则false
+     */
+    private static boolean isKeycode(char key,int code){
+        if ((int) key == code){
+            return true;
+        }
+        else {
+            switch (code){
+                case 96:
+                    if (key == '0'){
+                        return true;
+                    }
+                    break;
+                case 97:
+                    if (key == '1'){
+                        return true;
+                    }
+                    break;
+                case 98:
+                    if (key == '2'){
+                        return true;
+                    }
+                case 99:
+                    if (key == '3'){
+                        return true;
+                    }
+                    break;
+                case 100:
+                    if (key == '4'){
+                        return true;
+                    }
+                    break;
+                case 101:
+                    if (key == '5'){
+                        return true;
+                    }
+                    break;
+                case 102:
+                    if (key == '6'){
+                        return true;
+                    }
+                    break;
+                case 103:
+                    if (key == '7'){
+                        return true;
+                    }
+                    break;
+                case 104:
+                    if (key == '8'){
+                        return true;
+                    }
+                    break;
+                case 105:
+                    if (key == '9'){
+                        return true;
+                    }
+                    break;
+            }
+        }
+        return false;
+    }
     public static void main(String[] args) {
         int[] train_char1 = {65, 65, 80, 83, 80, 83, 76, 76, 76, 76, 75, 75, 81, 87, 81, 87, 49, 50, 49, 50};
         int[] train_state1 = {0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1};

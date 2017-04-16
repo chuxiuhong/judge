@@ -11,11 +11,11 @@ public class PwdJudger {
         this.pressWeight = pressWeight;
     }
 
-    //    public float compare(PeoplePassword[] trainList, PeoplePassword test, String password) throws IllegalArgumentException{
+//    public float compare(PeoplePassword[] trainList, PeoplePassword test, String password) throws IllegalArgumentException {
 //        float pressSimilar = 0;
 //        float flightSimilar = 0;
-//        PwdFeature trainFeature = PeoplePassword.getFeature(trainList,password);
-//        PwdFeature testFeature = PeoplePassword.getFeature(test,password);
+//        PwdFeature trainFeature = PeoplePassword.getFeature(trainList, password);
+//        PwdFeature testFeature = PeoplePassword.getFeature(test, password);
 //        float[] trainPress = trainFeature.getPressTime();
 //        float[] trainFlight = trainFeature.getFlightTime();
 //        float[] testPress = testFeature.getPressTime();
@@ -28,46 +28,55 @@ public class PwdJudger {
 //        float[] minFlight = trainFeature.getMinFlightTime();
 //        float[] pressSimilarList = new float[password.length()];
 //        float[] flightSimilarList = new float[password.length()];
-//        if (trainPress.length != testPress.length || trainFlight.length != testFlight.length){
+//        if (trainPress.length != testPress.length || trainFlight.length != testFlight.length) {
 //            throw new IllegalArgumentException("\nmust input the same password!");
 //        }
-//        System.out.println("maxPress ");
-//        for (float i:maxPress
-//             ) {
-//            System.out.println(i);
-//        }
-//        System.out.println("minPress");
-//        for (float i:minPress
-//             ) {
-//            System.out.println(i);
-//        }
-//        System.out.println("maxFlight");
-//        for (float i:maxFlight
-//             ) {
-//            System.out.println(i);
-//        }
-//        System.out.println("minFlight");
-//        for (float i:minFlight
-//             ) {
-//            System.out.println(i);
-//        }
+////        System.out.println("maxPress ");
+////        for (float i:maxPress
+////             ) {
+////            System.out.println(i);
+////        }
+////        System.out.println("minPress");
+////        for (float i:minPress
+////             ) {
+////            System.out.println(i);
+////        }
+////        System.out.println("maxFlight");
+////        for (float i:maxFlight
+////             ) {
+////            System.out.println(i);
+////        }
+////        System.out.println("minFlight");
+////        for (float i:minFlight
+////             ) {
+////            System.out.println(i);
+////        }
 //        for (int i = 0; i < trainPress.length; i++) {
-//            if (testPress[i] < maxPress[i] && testPress[i] > minPress[i]){
+//            if (testPress[i] < maxPress[i] && testPress[i] > minPress[i]) {
 //                pressSimilarList[i] = 1;
-//            }
-//            else {
-//                System.out.println(testPress[i]);
-//                System.out.println(trainPress[i]);
-//                System.out.println(varPress[i]);
-//                pressSimilarList[i] = (float) (Math.pow(Math.E,(-1) * Math.pow(testPress[i]-trainPress[i],2) / (2 * varPress[i])) / (Math.sqrt(varPress[i]) * Math.sqrt(2 * Math.PI)));
+//            } else {
+//                if (testPress[i] > maxPress[i]) {
+//                    //pressSimilarList[i] = (float) (Math.pow(Math.E, (-1) * Math.pow(((testPress[i] - maxPress[i]) / (maxPress[i] - minPress[i]))-1, 2))); // Math.sqrt(2 * Math.PI));
+//                    pressSimilarList[i] = (float) (1 / (1+Math.pow(Math.E,(-2) * (maxPress[i] - minPress[i]) / (testPress[i] - maxPress[i]))));
+//                } else {
+//                    //pressSimilarList[i] = (float) (Math.pow(Math.E, (-1) * Math.pow(((minPress[i] - testPress[i]) / (maxPress[i] - minPress[i]))-1, 2))); // Math.sqrt(2 * Math.PI));
+//                    pressSimilarList[i] = (float) (1 / (1+Math.pow(Math.E,(-2) * (maxPress[i] - minPress[i]) / (minPress[i] - testPress[i]))));
+//                }
 //            }
 //        }
 //        for (int i = 0; i < trainFlight.length; i++) {
-//            if (testFlight[i] < maxFlight[i] && testFlight[i] > minFlight[i]){
+//            if (testFlight[i] < maxFlight[i] && testFlight[i] > minFlight[i]) {
 //                flightSimilarList[i] = 1;
-//            }
-//            else {
-//                flightSimilarList[i] = (float) (Math.pow(Math.E,(-1) * Math.pow(testFlight[i]-trainFlight[i],2) / (2 * varFlight[i])) / (Math.sqrt(varFlight[i]) * Math.sqrt(2 * Math.PI)));
+//            } else {
+//                //flightSimilarList[i] = (float) (Math.pow(Math.E, (-1) * Math.pow(testFlight[i] - trainFlight[i], 2) / (2 * varFlight[i])) / (Math.sqrt(varFlight[i]) * Math.sqrt(2 * Math.PI)));
+//                if (testFlight[i] < maxFlight[i]){
+//                    //flightSimilarList[i] = (float) (Math.pow(Math.E, (-1) * Math.pow(((testFlight[i] - maxFlight[i]) / (maxFlight[i] - minFlight[i]))-1, 2))); // Math.sqrt(2 * Math.PI));
+//                    flightSimilarList[i] = (float) (1 / (1+Math.pow(Math.E,(-2) * (maxFlight[i] - minFlight[i]) / (testFlight[i] - maxFlight[i]))));
+//                }
+//                else {
+//                    //flightSimilarList[i] = (float) (Math.pow(Math.E, (-1) * Math.pow(((minFlight[i] - testFlight[i]) / (maxFlight[i] - minFlight[i]))-1, 2))); // Math.sqrt(2 * Math.PI));
+//                    flightSimilarList[i] = (float) (1 / (1+Math.pow(Math.E,(-2) * (maxFlight[i] - minFlight[i]) / (minFlight[i] - minFlight[i]))));
+//                }
 //            }
 //        }
 //        for (int i = 0; i < pressSimilarList.length; i++) {
@@ -78,24 +87,17 @@ public class PwdJudger {
 //            flightSimilar += flightSimilarList[i];
 //        }
 //        flightSimilar = flightSimilar / flightSimilarList.length;
-//        for (float i:pressSimilarList
-//             ) {
+//        for (float i : pressSimilarList
+//                ) {
 //            System.out.println(i);
 //        }
-//        for (float i:flightSimilarList
-//             ) {
+//        for (float i : flightSimilarList
+//                ) {
 //            System.out.println(i);
 //        }
 //        return pressSimilar * pressWeight + flightSimilar * (1 - pressWeight);
 //    }
 
-    /**
-     * 用以计算余弦相似度的静态方法，要求两个数组长度相等
-     * @param a 浮点数数组A
-     * @param b 浮点数数组B
-     * @return a，b两个数组的余弦相似度
-     * @throws IllegalArgumentException
-     */
     private static float cosSimilar(float[] a, float[] b) throws IllegalArgumentException {
         if (a.length != b.length) {
             throw new IllegalArgumentException("Length of vector must equal");
@@ -119,79 +121,62 @@ public class PwdJudger {
         return (float) tmp;
     }
 
-    /**
-     * 对多组训练数据和一组测试数据进行对比，从PeoplePassword提取特征传递过来，然后用余弦相似度的方法计算相似度
-     * @param trainList 训练样本的多组数据
-     * @param test 测试样本的数据
-     * @param password 对应的密码，用于提取特征正确提取出对应位置的特征
-     * @return 相似度，0-1之间，目前是不带权重的余弦相似度
-     * @throws IllegalArgumentException
-     */
     public float compare(PeoplePassword[] trainList, PeoplePassword test, String password) throws IllegalArgumentException {
-        float pressSimilar = 0;
-        float flightSimilar = 0;
+        float pressSimilar;
+        float flightSimilar;
         PwdFeature trainFeature = PeoplePassword.getFeature(trainList, password);
         PwdFeature testFeature = PeoplePassword.getFeature(test, password);
         float[] trainPress = trainFeature.getPressTime();
         float[] trainFlight = trainFeature.getFlightTime();
         float[] testPress = testFeature.getPressTime();
         float[] testFlight = testFeature.getFlightTime();
-        float[] varPress = trainFeature.getVarPress();
-        float[] varFlight = trainFeature.getVarFlight();
         float[] maxPress = trainFeature.getMaxPressTime();
         float[] minPress = trainFeature.getMinPressTime();
         float[] maxFlight = trainFeature.getMaxFlightTime();
         float[] minFlight = trainFeature.getMinFlightTime();
-        float[] pressSimilarList = new float[password.length()];
-        float[] flightSimilarList = new float[password.length()];
         if (trainPress.length != testPress.length || trainFlight.length != testFlight.length) {
             throw new IllegalArgumentException("\nmust input the same password!");
         }
-//        System.out.println("trainPress: ");
-//        for (float i : trainPress
-//                ) {
-//            System.out.println(i);
+
+//        for (int i = 0; i < trainPress.length; i++) {
+//            if (Math.abs(testPress[i] - maxPress[i]) < 0.5 * (maxPress[i] - minPress[i]) || Math.abs(minPress[i] - testPress[i]) < 0.5 * (maxPress[i]-minPress[i])){
+//                testPress[i] = trainPress[i];
+//            }
 //        }
-//        System.out.println("testPress: ");
-//        for (float i : testPress
-//                ) {
-//            System.out.println(i);
+//        for (int i = 0; i < trainFlight.length; i++) {
+//            if (Math.abs(testFlight[i] - maxFlight[i]) < 0.5 * (maxFlight[i] - minFlight[i]) || Math.abs(minFlight[i] - testFlight[i]) < 0.5 * (maxFlight[i] - minFlight[i])){
+//                testFlight[i] = trainFlight[i];
+//            }
 //        }
-//        System.out.println("trainFlight");
-//        for (float i : trainFlight
-//                ) {
-//            System.out.println(i);
-//        }
-//        System.out.println("testFlight");
-//        for (float i : testFlight
-//                ) {
-//            System.out.println(i);
-//        }
-        float pressTrainInner = 0;
-        float pressTestInner = 0;
-        float flightTrainInner = 0;
-        float flightTestInner = 0;
-        for (int i = 0; i < trainPress.length; i++) {
-            pressTrainInner += trainPress[i] * trainPress[i];
-            pressTestInner += testPress[i] * testPress[i];
-            pressSimilar += trainPress[i] * testPress[i];
+        System.out.println("trainPress");
+        for (float i:trainPress
+                ) {
+            System.out.print(" " + i);
         }
-        for (int i = 0; i < trainFlight.length; i++) {
-            flightTrainInner += trainFlight[i] * trainFlight[i];
-            flightTestInner += testFlight[i] * testFlight[i];
-            flightSimilar += trainFlight[i] * testFlight[i];
+        System.out.println("\ntestPress");
+        for (float i:testPress
+                ) {
+            System.out.print(" " + i);
         }
-        //pressSimilar = pressSimilar / (pressTrainInner * pressTestInner);
-        //flightSimilar = flightSimilar / (flightTrainInner * flightTestInner);
-        pressSimilar = PwdJudger.cosSimilar(trainPress, testPress);
-        flightSimilar = PwdJudger.cosSimilar(trainFlight, testFlight);
+        System.out.println("\ntrainFlight");
+        for (float i:trainFlight
+                ) {
+            System.out.print(" " + i);
+        }
+        System.out.println("\ntestFlight");
+        for (float i:testFlight
+                ) {
+            System.out.print(" " + i);
+        }
+        pressSimilar = PwdJudger.cosSimilar(trainPress,testPress);
+        flightSimilar = PwdJudger.cosSimilar(trainFlight,testFlight);
         return pressSimilar * pressWeight + (1 - pressWeight) * flightSimilar;
     }
 
     public static void main(String[] args) {
-        int[] train_char1 = {65, 65, 80, 83, 80, 83, 76, 76, 76, 76, 75, 75, 81, 87, 81, 87, 49, 50, 49, 50};
-        int[] train_state1 = {0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1};
-        int[] train_time1 = {0, 119, 141, 209, 228, 299, 359, 419, 479, 549, 629, 699, 929, 1039, 1090, 1149, 1229, 1309, 1369, 1419};
+        int[] train_char1 = {65, 65, 80, 83, 80, 83, 76, 76, 76, 76, 75, 75, 81, 87, 81, 87, 49, 50, 49, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+        int[] train_state1 = {0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+        int[] train_time1 = {0, 119, 141, 209, 228, 299, 359, 419, 479, 549, 629, 699, 929, 1039, 1090, 1149, 1229, 1309, 1369, 1419, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         System.out.println(train_char1.length == train_state1.length);
         System.out.println(train_state1.length == train_time1.length);
         int[] train_char2 = {65, 65, 80, 80, 83, 83, 76, 76, 76, 76, 75, 75, 81, 87, 81, 87, 49, 50, 49, 50};
@@ -212,6 +197,5 @@ public class PwdJudger {
         trainList[1] = p2;
         PwdJudger pj = new PwdJudger(0.5f);
         System.out.println(pj.compare(trainList, p3, "apsllkqw12"));
-
     }
 }
