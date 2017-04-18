@@ -19,8 +19,8 @@ public class postman {
     public static float comparePass(String test, String train, String pass) {
         String[] aList = test.split("\n|,");
         String[] bList = train.split("\n|,");
-        int aLength = aList.length - 3;
-        int bLength = bList.length - 6;
+        int aLength = aList.length;
+        int bLength = bList.length;
         ArrayList<Integer> aCharList = new ArrayList<>();
         ArrayList<Integer> aStateList = new ArrayList<>();
         ArrayList<Integer> aTimeList = new ArrayList<>();
@@ -66,52 +66,52 @@ public class postman {
             }
         }
         try {
-//            System.out.println("aCharList = ");
-//            for (int i : aCharList
-//                    ) {
-//                System.out.print(i + " ");
-//            }
-//            System.out.println("\naStateList = ");
-//            for (int i : aStateList
-//                    ) {
-//                System.out.print(i + " ");
-//            }
-//            System.out.println("\naTimeList = ");
-//            for (int i : aTimeList
-//                    ) {
-//                System.out.print(i + " ");
-//            }
-//            System.out.println("\nbCharList1 = ");
-//            for (int i : bCharList1
-//                    ) {
-//                System.out.print(i + " ");
-//            }
-//            System.out.println("\nbStateList1 = ");
-//            for (int i : bStateList1
-//                    ) {
-//                System.out.print(i + " ");
-//            }
-//            System.out.println("\nbTimeList1 = ");
-//            for (int i : bTimeList1
-//                    ) {
-//                System.out.print(i + " ");
-//            }
-//            System.out.println("\nbCharList2 = ");
-//            for (int i : bCharList2
-//                    ) {
-//                System.out.print(i + " ");
-//            }
-//            System.out.println("\nbStateList2 = ");
-//            for (int i : bStateList2
-//                    ) {
-//                System.out.print(i + " ");
-//            }
-//            System.out.println("\nbTimeList2 = ");
-//            for (int i : bTimeList2
-//                    ) {
-//                System.out.print(i + " ");
-//            }
-//            System.out.println("\npass "+pass);
+            System.out.println("aCharList = ");
+            for (int i : aCharList
+                    ) {
+                System.out.print(i + " ");
+            }
+            System.out.println("\naStateList = ");
+            for (int i : aStateList
+                    ) {
+                System.out.print(i + " ");
+            }
+            System.out.println("\naTimeList = ");
+            for (int i : aTimeList
+                    ) {
+                System.out.print(i + " ");
+            }
+            System.out.println("\nbCharList1 = ");
+            for (int i : bCharList1
+                    ) {
+                System.out.print(i + " ");
+            }
+            System.out.println("\nbStateList1 = ");
+            for (int i : bStateList1
+                    ) {
+                System.out.print(i + " ");
+            }
+            System.out.println("\nbTimeList1 = ");
+            for (int i : bTimeList1
+                    ) {
+                System.out.print(i + " ");
+            }
+            System.out.println("\nbCharList2 = ");
+            for (int i : bCharList2
+                    ) {
+                System.out.print(i + " ");
+            }
+            System.out.println("\nbStateList2 = ");
+            for (int i : bStateList2
+                    ) {
+                System.out.print(i + " ");
+            }
+            System.out.println("\nbTimeList2 = ");
+            for (int i : bTimeList2
+                    ) {
+                System.out.print(i + " ");
+            }
+            System.out.println("\npass "+pass);
             PeoplePassword aPwd = new PeoplePassword(aCharList, aStateList, aTimeList);
             PeoplePassword bPwd1 = new PeoplePassword(bCharList1, bStateList1, bTimeList1);
             PeoplePassword bPwd2 = new PeoplePassword(bCharList2, bStateList2, bTimeList2);
@@ -127,8 +127,8 @@ public class postman {
     public static float compareText(String test,String train) {
         String[] aList = test.split("\n|,");
         String[] bList = train.split("\n|,");
-        int aLength = aList.length - 3;
-        int bLength = bList.length - 6;
+        int aLength = aList.length;
+        int bLength = bList.length;
         ArrayList<Integer> aCharList = new ArrayList<>();
         ArrayList<Integer> aStateList = new ArrayList<>();
         ArrayList<Integer> aTimeList = new ArrayList<>();
@@ -184,5 +184,9 @@ public class postman {
             e.printStackTrace();
             return 0.79f;
         }
+    }
+
+    public static void main(String[] args) {
+
     }
 }
