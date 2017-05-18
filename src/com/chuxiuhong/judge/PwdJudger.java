@@ -168,6 +168,27 @@ public class PwdJudger {
                 ) {
             System.out.print(" " + i);
         }
+        float times = 0;
+        float sum1 = 0;
+        float sum2 = 0;
+        for (int i = 0; i < testPress.length; i++) {
+            sum1 +=testPress[i];
+            sum2 += trainPress[i];
+        }
+        times = sum2 / sum1;
+        for (int i = 0; i < testPress.length; i++) {
+            testPress[i] *= times;
+        }
+        sum1 = sum2 = 0;
+
+        for (int i = 0; i < testFlight.length; i++) {
+            sum1 += testFlight[i];
+            sum2 += trainFlight[i];
+        }
+        times = sum2 / sum1;
+        for (int i = 0; i < testFlight.length; i++) {
+            testFlight[i] *= times;
+        }
         pressSimilar = PwdJudger.cosSimilar(trainPress,testPress);
         flightSimilar = PwdJudger.cosSimilar(trainFlight,testFlight);
         return pressSimilar * pressWeight + (1 - pressWeight) * flightSimilar;
