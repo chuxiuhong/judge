@@ -144,6 +144,24 @@ public class TextJudger {
                 }
             }
         }
+        float sum1 = 0;
+        float sum2 = 0;
+        for (int i = 0; i < trainPressVec.size(); i++) {
+            sum1 += trainPressVec.get(i);
+            sum2 += testPressVec.get(i);
+        }
+        for (int i = 0; i < testPressVec.size(); i++) {
+            testPressVec.set(i,testPressVec.get(i) * (sum1 / sum2));
+        }
+        sum1=sum2=0;
+        for (int i = 0; i < trainFlightVec.size(); i++) {
+            sum1 += trainFlightVec.get(i);
+            sum2 += testFlightVec.get(i);
+        }
+        for (int i = 0; i < testFlightVec.size(); i++) {
+            testFlightVec.set(i,testFlightVec.get(i) * (sum1 / sum2));
+        }
+
         float pressSimilar = TextJudger.cosSimilar(trainPressVec, testPressVec);
         float flightSimilar = TextJudger.cosSimilar(trainFlightVec, testFlightVec);
 //        float pressSimilar = TextJudger.weightCosSimilar(trainPressVec,trainPressTimesVec,testPressVec,testPressTimesVec);
