@@ -170,6 +170,7 @@ public class Postman {
                 }
             }
         }
+        int length = 0;
         HashMap<Integer,Integer> filter= new HashMap<>();
         int[] flagList = new int[aCharList.size()];
         for (int i = 0; i < aCharList.size(); i++) {
@@ -186,7 +187,7 @@ public class Postman {
                 flagList[i] = 1;
             }
         }
-        for (int i = flagList.length - 1; i >= 0; i++) {
+        for (int i = flagList.length - 1; i >= 0; i--) {
             if (flagList[i] == 1){
                 aCharList.remove(i);
                 aTimeList.remove(i);
@@ -209,7 +210,7 @@ public class Postman {
                 flagList1[i] = 1;
             }
         }
-        for (int i = flagList1.length - 1; i >= 0; i++) {
+        for (int i = flagList1.length - 1; i >= 0; i--) {
             if (flagList1[i] == 1){
                 bCharList1.remove(i);
                 bTimeList1.remove(i);
@@ -232,7 +233,7 @@ public class Postman {
                 flagList2[i] = 1;
             }
         }
-        for (int i = flagList2.length - 1; i >= 0; i++) {
+        for (int i = flagList2.length - 1; i >= 0; i--) {
             if (flagList2[i] == 1){
                 bCharList2.remove(i);
                 bTimeList2.remove(i);
