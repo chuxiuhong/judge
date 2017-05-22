@@ -170,7 +170,6 @@ public class Postman {
                 }
             }
         }
-        int length = 0;
         HashMap<Integer,Integer> filter= new HashMap<>();
         int[] flagList = new int[aCharList.size()];
         for (int i = 0; i < aCharList.size(); i++) {
