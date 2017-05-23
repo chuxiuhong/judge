@@ -128,11 +128,13 @@ public class Postman {
         HashMap<Integer, Integer> filter = new HashMap<>();
         int[] flagList = new int[aCharList.size()];
         for (int i = 0; i < aCharList.size(); i++) {
-            if (aStateList.get(i) == 0 && !filter.containsKey(i)) {
+            if (aStateList.get(i) == 0 && !filter.containsKey(aCharList.get(i))) {
                 filter.put(aCharList.get(i), i);
+                flagList[i] = 1;
             } else if (aStateList.get(i) == 0) {
                 flagList[i] = 1;
-            } else if (aStateList.get(i) == 1 && !filter.containsKey(i)) {
+            } else if (aStateList.get(i) == 1 && filter.containsKey(aCharList.get(i))) {
+                flagList[filter.get(aCharList.get(i))] = 0;
                 filter.remove(aCharList.get(i));
             } else if (aStateList.get(i) == 1) {
                 flagList[i] = 1;
@@ -148,11 +150,13 @@ public class Postman {
         filter.clear();
         int[] flagList1 = new int[bCharList1.size()];
         for (int i = 0; i < bCharList1.size(); i++) {
-            if (bStateList1.get(i) == 0 && !filter.containsKey(i)) {
+            if (bStateList1.get(i) == 0 && !filter.containsKey(bCharList1.get(i))) {
+                flagList1[i] = 1;
                 filter.put(bCharList1.get(i), i);
             } else if (bStateList1.get(i) == 0) {
                 flagList1[i] = 1;
-            } else if (bStateList1.get(i) == 1 && !filter.containsKey(i)) {
+            } else if (bStateList1.get(i) == 1 && filter.containsKey(bCharList1.get(i))) {
+                flagList1[filter.get(bCharList1.get(i))] = 0;
                 filter.remove(bCharList1.get(i));
             } else if (bStateList1.get(i) == 1) {
                 flagList1[i] = 1;
@@ -168,11 +172,13 @@ public class Postman {
         filter.clear();
         int[] flagList2 = new int[bCharList2.size()];
         for (int i = 0; i < bCharList2.size(); i++) {
-            if (bStateList2.get(i) == 0 && !filter.containsKey(i)) {
+            if (bStateList2.get(i) == 0 && !filter.containsKey(bCharList2.get(i))) {
+                flagList2[i] = 1;
                 filter.put(bCharList2.get(i), i);
             } else if (bStateList2.get(i) == 0) {
                 flagList2[i] = 1;
-            } else if (bStateList2.get(i) == 1 && !filter.containsKey(i)) {
+            } else if (bStateList2.get(i) == 1 && filter.containsKey(bCharList2.get(i))) {
+                flagList2[filter.get(bCharList2.get(i))] = 0;
                 filter.remove(bCharList2.get(i));
             } else if (bStateList2.get(i) == 1) {
                 flagList2[i] = 1;
