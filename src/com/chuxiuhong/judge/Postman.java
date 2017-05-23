@@ -185,51 +185,51 @@ public class Postman {
                 bStateList2.remove(i);
             }
         }
-        System.out.println("aCharList = ");
-        for (int i : aCharList
-                ) {
-            System.out.print(i + " ");
-        }
-        System.out.println("\naStateList = ");
-        for (int i : aStateList
-                ) {
-            System.out.print(i + " ");
-        }
-        System.out.println("\naTimeList = ");
-        for (int i : aTimeList
-                ) {
-            System.out.print(i + " ");
-        }
-        System.out.println("\nbCharList1 = ");
-        for (int i : bCharList1
-                ) {
-            System.out.print(i + " ");
-        }
-        System.out.println("\nbStateList1 = ");
-        for (int i : bStateList1
-                ) {
-            System.out.print(i + " ");
-        }
-        System.out.println("\nbTimeList1 = ");
-        for (int i : bTimeList1
-                ) {
-            System.out.print(i + " ");
-        }
-        System.out.println("\nbCharList2 = ");
-        for (int i : bCharList2
-                ) {
-            System.out.print(i + " ");
-        }
-        System.out.println("\nbStateList2 = ");
-        for (int i : bStateList2
-                ) {
-            System.out.print(i + " ");
-        }
-        System.out.println("\nbTimeList2 = ");
-        for (int i : bTimeList2
-                ) {
-            System.out.print(i + " ");
-        }
+//        System.out.println("aCharList = ");
+//        for (int i : aCharList
+//                ) {
+//            System.out.print(i + " ");
+//        }
+//        System.out.println("\naStateList = ");
+//        for (int i : aStateList
+//                ) {
+//            System.out.print(i + " ");
+//        }
+//        System.out.println("\naTimeList = ");
+//        for (int i : aTimeList
+//                ) {
+//            System.out.print(i + " ");
+//        }
+//        System.out.println("\nbCharList1 = ");
+//        for (int i : bCharList1
+//                ) {
+//            System.out.print(i + " ");
+//        }
+//        System.out.println("\nbStateList1 = ");
+//        for (int i : bStateList1
+//                ) {
+//            System.out.print(i + " ");
+//        }
+//        System.out.println("\nbTimeList1 = ");
+//        for (int i : bTimeList1
+//                ) {
+//            System.out.print(i + " ");
+//        }
+//        System.out.println("\nbCharList2 = ");
+//        for (int i : bCharList2
+//                ) {
+//            System.out.print(i + " ");
+//        }
+//        System.out.println("\nbStateList2 = ");
+//        for (int i : bStateList2
+//                ) {
+//            System.out.print(i + " ");
+//        }
+//        System.out.println("\nbTimeList2 = ");
+//        for (int i : bTimeList2
+//                ) {
+//            System.out.print(i + " ");
+//        }
         try {
             PeopleText p1 = new PeopleText(aCharList, aStateList, aTimeList);
             PeopleText p2 = new PeopleText(bCharList1, bStateList1, bTimeList1);
