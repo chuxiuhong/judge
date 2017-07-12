@@ -102,10 +102,10 @@ public class TextJudger {
         float pressSimilar = TextJudger.cosSimilar(trainPressVec, testPressVec);
         float flightSimilar = TextJudger.cosSimilar(trainFlightVec, testFlightVec);
         float flightSimilar2 = TextJudger.cosSimilar(trainFlightVec2, testFlightVec2);
-        float flightSimilar3  = TextJudger.cosSimilar(trainFlightVec3, testFlightVec3);
+        float flightSimilar3 = TextJudger.cosSimilar(trainFlightVec3, testFlightVec3);
 //        float pressSimilar = TextJudger.weightCosSimilar(trainPressVec,trainPressTimesVec,testPressVec,testPressTimesVec);
 //        float flightSimilar = TextJudger.weightCosSimilar(trainFlightVec,trainFlightTimesVec,testFlightVec,testFlightTimesVec);
-        flightSimilar = (float) Math.pow(flightSimilar*flightSimilar2*flightSimilar3,1.0/3);
+        flightSimilar = (float) Math.pow(flightSimilar * flightSimilar2 * flightSimilar3, 1.0 / 3);
         float similar = 0;
         if (trainPressVec.size() > 1 && trainFlightVec.size() > 1) {
             similar = pressWeight * pressSimilar + (1 - pressWeight) * flightSimilar;
@@ -196,10 +196,10 @@ public class TextJudger {
         float pressSimilar = TextJudger.cosSimilar(trainPressVec, testPressVec);
         float flightSimilar = TextJudger.cosSimilar(trainFlightVec, testFlightVec);
         float flightSimilar2 = TextJudger.cosSimilar(trainFlightVec2, testFlightVec2);
-        float flightSimilar3  = TextJudger.cosSimilar(trainFlightVec3, testFlightVec3);
+        float flightSimilar3 = TextJudger.cosSimilar(trainFlightVec3, testFlightVec3);
 //        float pressSimilar = TextJudger.weightCosSimilar(trainPressVec,trainPressTimesVec,testPressVec,testPressTimesVec);
 //        float flightSimilar = TextJudger.weightCosSimilar(trainFlightVec,trainFlightTimesVec,testFlightVec,testFlightTimesVec);
-        flightSimilar = (float) Math.pow(flightSimilar*flightSimilar2*flightSimilar3,1.0/3);
+        flightSimilar = (float) Math.pow(flightSimilar * flightSimilar2 * flightSimilar3, 1.0 / 3);
         float similar = 0;
         if (trainPressVec.size() > 1 && trainFlightVec.size() > 1) {
             similar = pressWeight * pressSimilar + (1 - pressWeight) * flightSimilar;
