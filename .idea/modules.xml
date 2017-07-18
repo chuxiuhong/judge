@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/judge.iml" filepath="$PROJECT_DIR$/judge.iml" />
+      <module fileurl="file://$PROJECT_DIR$/keytrace.iml" filepath="$PROJECT_DIR$/keytrace.iml" />
     </modules>
   </component>
 </project>
